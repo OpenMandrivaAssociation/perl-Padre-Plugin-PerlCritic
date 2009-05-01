@@ -1,6 +1,6 @@
 
 %define realname   Padre-Plugin-PerlCritic
-%define version    0.04
+%define version    0.06
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
