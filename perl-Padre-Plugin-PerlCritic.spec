@@ -1,5 +1,5 @@
 %define upstream_name    Padre-Plugin-PerlCritic
-%define upstream_version 0.08
+%define upstream_version 0.12
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -15,6 +15,7 @@ BuildRequires: perl(Padre)
 BuildRequires: perl(Perl::Critic)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build::Compat)
+BuildRequires: perl(Module::Install)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -25,8 +26,8 @@ no description found
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 # no testing, wx dies on missing display
 #%check
@@ -34,7 +35,7 @@ no description found
 
 %install
 rm -rf %buildroot
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %clean
 rm -rf %buildroot
