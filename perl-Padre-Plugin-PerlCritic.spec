@@ -2,14 +2,14 @@
 %define upstream_version 0.12
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	6
 
 Summary:	Analyze perl files with Perl::Critic
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Padre/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://padre.perlide.org
+Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Padre-Plugin-PerlCritic-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Padre)
