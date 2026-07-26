@@ -1,15 +1,13 @@
 %define upstream_name    Padre-Plugin-PerlCritic
-%define upstream_version 0.12
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.12
+Release:	7
 
 Summary:	Analyze perl files with Perl::Critic
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://padre.perlide.org
-Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Padre-Plugin-PerlCritic-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Padre-Plugin-PerlCritic-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Padre)
@@ -23,7 +21,7 @@ BuildArch:	noarch
 Padre plugin to analyze perl files with Perl::Critic.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor
@@ -60,8 +58,7 @@ perl Build.PL installdirs=vendor
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.60.0-1mdv2010.0
 + Revision: 401619
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.12 fixed license field
 
 * Mon May 04 2009 Jérôme Quelin <jquelin@mandriva.org> 0.06-2mdv2010.0
 + Revision: 371827
